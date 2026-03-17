@@ -49,10 +49,13 @@ if(!$numTabs) return;
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
+<?php
+$scriptString = <<<script
     require(['jquery','gridSlider'], function($, gridSlider){
-        var el  = $('.<?php echo $selector ?>');
+        var el  = $('.$selector');
         if(el.length) el.gridSlider();
     });
 	require(['magicproduct']);
-</script>
+script;
+?>
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>
