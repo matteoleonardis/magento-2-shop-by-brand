@@ -31,7 +31,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
         // If the name field is called "name", leave it as it is;
         // if it has a different name (e.g. "title"), change it here.
-        $this->setOrder('name', 'ASC');
+        $this->setOrder('title', 'ASC');
 
         return $this;
     }
